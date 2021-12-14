@@ -7,17 +7,20 @@ public class Snake{
 		Scanner sc=new Scanner(System.in);
 		int position =1;  //initail position is 1 because game starts from 1 on board
                 int prev_position;
-		int dice=roll();
-		System.out.println("Your number is "+dice);
-		System.out.println("choose option");
+     		while(position!=100) {
+                        System.out.println("Your position is "+position);
+			prev_position=position;
+     			int dice=roll();
+			System.out.println("Your number is "+dice);
+			System.out.println("choose option");
 			String option = sc.next();
 			switch(option) {
 				case "S": //for snake
 					System.out.println("You have choosed snake");
 					counter+=1;
-					position+=dice;
- 					if(position>100) {
-					position=prev_position;
+	/*				position+=dice;
+ 	  usecase5			if(position>100) {
+	*/				position=prev_position;
 					}
 					System.out.println("New position is "+position);
 					report.put(counter, position);
@@ -25,11 +28,11 @@ public class Snake{
 				case "L": //for ladder
 					System.out.println("You have choosed ladder");
 					counter+=1;
-					position-=dice;
+					position-=dice; 
 					System.out.println("New position is "+position);
-                                        if(position<0) {
-					start();
-				        }
+              /*               		if(position<0) {
+		usecase4 		start();
+		*/		        }
 
 					report.put(counter, position);
 					break;
@@ -40,6 +43,7 @@ public class Snake{
 					report.put(counter, position);
 
 			}
+		}
 	}
 	public static int roll() {
 
