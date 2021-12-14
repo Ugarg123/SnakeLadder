@@ -32,7 +32,7 @@ public class Snake{
 				case "L": //for ladder
 					System.out.println("You have choosed ladder");
 					counter+=1;
-					position-=dice; 
+					position-=dice;
 					System.out.println("New position is "+position);
               /*               		if(position<0) {
 		usecase4 		start();
